@@ -16,6 +16,7 @@ public class Main {
     }
 
     public static void methodSubmit(ExecutorService threadPool) {
+        final int TIME_TO_SLEEP = 1500;
         System.out.println("Задача с методом submit()");
 
         Callable<Integer> myThread1 = new MyThread();
@@ -30,7 +31,7 @@ public class Main {
 
         try {
             while(!task1.isDone() || !task2.isDone() || !task3.isDone() || !task4.isDone()){
-            Thread.sleep(1500);
+            Thread.sleep(TIME_TO_SLEEP);
             }
         } catch (InterruptedException err) {
 

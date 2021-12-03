@@ -1,6 +1,7 @@
 import java.util.concurrent.Callable;
 
 public class MyThread implements Callable<Integer> {
+    public static final int TIME_TO_WAIT = 3000;
     private int count = 0;
     private int maxCount = 5;
 
@@ -8,7 +9,7 @@ public class MyThread implements Callable<Integer> {
     public Integer call() throws Exception {
         try {
             while (count < maxCount) {
-                Thread.sleep(3000);
+                Thread.sleep(TIME_TO_WAIT);
                 System.out.printf("%s работаю\n", Thread.currentThread().getName());
                 count++;
             }
